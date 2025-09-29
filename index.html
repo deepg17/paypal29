@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Payment Confirmation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .receipt-container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0070ba 0%, #1546a0 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0070ba;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .contact-box {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-box p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .phone-number {
+            display: inline-block;
+            background: #0070ba;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-number:hover {
+            background: #005ea6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 112, 186, 0.3);
+        }
+        
+        .transaction-details {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .transaction-details tr {
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .transaction-details td {
+            padding: 12px 5px;
+        }
+        
+        .transaction-details td:first-child {
+            font-weight: 600;
+            color: #555;
+            width: 40%;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #e7f7ef;
+            color: #00a870;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .status-badge::before {
+            content: "✓ ";
+            font-weight: bold;
+        }
+        
+        .refund-policy {
+            background: #fff8e6;
+            border-left: 4px solid #ffc439;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .refund-policy p {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #0070ba;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 480px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1280px-PayPal.svg.png" alt="PayPal Logo" style="width: 100px; margin-bottom: 10px;">
+            <p>Payment Confirmation Receipt</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="contact-box">
+                    <p>Need assistance with your payment?</p>
+                    <a href="tel:+1-877-809-8678" class="phone-number">+1-877-809-8678</a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Transaction Details</h2>
+                <table class="transaction-details">
+                    <tr>
+                        <td>Transaction ID</td>
+                        <td>TRX-66298258</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice No</td>
+                        <td>JM69H-372M-BZ33U</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>10-09-2025</td>
+                    </tr>
+                    <tr>
+                        <td>Service</td>
+                        <td>Digital Asset & Cryptocurrency Services</td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td>$399.99</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td><span class="status-badge">Paid</span></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Refund Policy</h2>
+                <div class="refund-policy">
+                    <p>If you notice a charge you don't recognize or feel the service isn't meeting your expectations, our <span class="highlight">PAYPAL Support</span> team is here to assist you.</p>
+                    <p>Refund requests made within <span class="highlight">12 hours</span> of payment will be carefully reviewed.</p>
+                    <p style="margin-top: 15px;">This is an automated notification, please do not reply directly.</p>
+                    <p style="margin-top: 10px;">For further details, call <a href="tel:+1-877-809-8678" class="highlight">+1-877-809-8678</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 PAYPAL Services | 184 Christina Vista Suite 145, Sanchezmouth, W | 12634</p>
+            <p>All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
